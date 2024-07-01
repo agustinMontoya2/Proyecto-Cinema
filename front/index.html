@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  </head>
-  <body>
-    <h1>Proyecto de M2</h1>
-
-    <script src="./scripts/tempData.js"></script>
-    <script src="./scripts/index.js"></script>
-  </body>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <header>
+        <section id="search">
+            <a href="./index.html" class="no-line"><h1>PeliculasBuenas.com</h1></a>
+        <div id="navegador">
+            <input type="text" placeholder="search" id="nav">
+        </div>
+        <div id="profile-conteiner">
+            <img src="./assets/bb9a24b4a0718b0b896b31ada2761377.jpg" id="profile">
+            <div id="menu">
+                <a href="#">opcion</a>
+                <a href="#">opcion</a>
+                <a href="#">opcion</a>
+                <a href="#">opcion</a>
+                <a href="#">opcion</a>
+                <a href="#">opcion</a>
+                <a href="#">opcion</a>
+                <a href="#">opcion</a>
+                <a href="#">opcion</a>
+            </div>
+        </div>
+        </section>
+    </header>
+    <main>
+        <img id="profileIcon" src="./assets/bb9a24b4a0718b0b896b31ada2761377.jpg">
+        <section class="categorias" id="recomendation">
+            <h2>Recomendadas</h2>
+            <div class="categoria" id="recomend"></div>
+            <h2>Accion</h2>
+            <div class="categoria" id="accion"></div>
+            <h2>Aventura</h2>
+            <div class="categoria" id="aventura"></div>
+            <h2>comedia</h2>
+            <div class="categoria" id="comedia"></div>
+        </section>
+    </main>
+    <footer>
+        <div id="contentFooter">
+            <a href="https://www.imdb.com/" class="linkFooter no-line">IMDb</a>
+            <a href="https://www.justwatch.com/" class="linkFooter no-line">JustWacth</a>
+            <a href="https://www.stremio.com/" class="linkFooter no-line">Stremio</a>
+            <a href="https://www.rottentomatoes.com/" class="linkFooter no-line">Rotten Tomatoes</a>
+            <a href="https://www.sensacine.com/peliculas/" class="linkFooter no-line">Sensacine</a>
+        </div>
+    </footer>
+    <script type="module" src="./script/script.js"></script>
+</body>
 </html>

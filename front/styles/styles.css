@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap');
+
+
+header {
+    background-color: #171770;
+    display: flex;
+}
+
+main {
+    background-color: rgb(14, 12, 32);
+}
+
+footer {
+    background-color: black;
+}
+
+h1 {
+    color: black;
+    font-family: "Prompt", sans-serif;
+}
+
+#search {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    width: 98%;
+    justify-content: space-between;
+}
+#search img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+#nav {
+    border: 2px solid black;
+    background: rgba(0, 0, 0, 0.466);
+    color: white;
+    border-radius: 15px;
+    width: 32em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    margin-block: 2px;
+}
+
+#navegador {
+    display: flex;
+}
+
+#links {
+    width: 6em;
+    display: flex;
+    justify-content: space-between;
+}
+
+#profileIcon {
+    width: 150px;
+    border-radius: 50%;
+    margin: 2em;
+}
+
+.no-line {
+    text-decoration: none;
+}
+.categoria {
+    height: auto;
+    display: flex;
+    align-items: center;
+    font-family: "Space Grotesk", sans-serif;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 1em;
+    position: relative;
+}
+.categorias h2{
+    color: white;
+    margin-left: 1em;
+    font-family: "Bebas Neue", sans-serif
+}
+
+.movieCard {
+    border: 2px solid black;
+    background-color: rgb(17, 17, 17);
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 13em;
+    height: 11em;
+    margin-inline: 0.3em;
+    align-content: center;
+    transition: 1s;
+    flex: 0 0 auto;
+}
+
+.movieCard:hover {
+    width: 24em;
+    height: 20em;
+    z-index: 100;
+    background-color: rgb(0, 0, 0);
+    .movieDate {display: block;}
+    .tituloPelicula {
+        color: white;
+        margin-bottom: 20px;
+    }
+    
+}
+
+.movieCard img {
+    width: 90%;
+    height: 60%;
+    margin-top: 5px;
+}
+
+.movieDate {
+    display: none;
+    color: white;
+    white-space: normal;
+}
+.tituloPelicula {
+    white-space: normal;
+}
+
+.puntuacionDuracion {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    z-index: 100;
+    margin-top: -25px;
+}
+
+#contentFooter{
+    margin: auto;
+    padding: 2em;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4em;
+}
+.linkFooter {
+    color: rgb(158, 156, 156);
+}
+
+#menu {
+    width: 15em;
+    height: 20em;
+    background-color: aliceblue;
+    float: right;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    display: none;
+    overflow-y: scroll;
+}
+
+#profile-conteiner:hover #menu{
+        display: flex;
+        flex-direction: column;
+}
+
+#profile-conteiner a:Hover{
+    background-color: lightgray;
+}
+
+#profile-conteiner a {
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+}
