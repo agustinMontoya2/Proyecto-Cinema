@@ -1,42 +1,39 @@
-//import { tempData } from "./tempData.js";
-
-class Movie {
-    constructor(title, year, director, duration,genre, rate, poster) {
-        this.title = title 
-        this.year =  year 
-        this.director = director 
-        this.duration = duration 
-        this.genre = genre 
-        this.rate = rate 
-        this.poster = poster 
-    }
-}
-
-class Repository {
-    constructor(){
-        this.movies = []
-    }
-    createMovie ({title, year, director, duration,genre, rate, poster}) {
-        const movie = new Movie (title, year, director, duration,genre, rate, poster)
-        this.movies.push(movie)
-    }
-    createMovies(moviesData) {
-        moviesData.forEach(movieData => this.createMovie(movieData))
-    }
-    getMovies () {
-        return this.movies
-    }
-}
-const repo = new Repository
-
 $.get("https://students-api.up.railway.app/movies", (data, state)=>{
-    repo.createMovies(data)
-    console.log(repo.movies);
-    renderPeliculas()
+    
+    renderPeliculas(data)
 })
 
-const movies = repo.movies
-
+function renderPeliculas(data) {
+    data.forEach(pelicula => {
+        const tarjeta = crearObjeto(pelicula)
+        recomend.appendChild(tarjeta)})
+        ////division de genero////
+        //action
+        data.forEach(pelicula => {
+            if (pelicula.genre.includes("Action")){
+                const tarjeta = crearObjeto(pelicula)
+                accion.appendChild(tarjeta)
+            }
+        }) //adventure
+        data.forEach(pelicula => {
+            if (pelicula.genre.includes("Adventure")){
+                const tarjeta = crearObjeto(pelicula)
+                aventura.appendChild(tarjeta)
+            }
+        }) //Comedy
+        data.forEach(pelicula => {
+            if (pelicula.genre.includes("Comedy")){
+                const tarjeta = crearObjeto(pelicula)
+                comedia.appendChild(tarjeta)
+            }
+        }) //sci-fi
+        data.forEach(pelicula => {
+            if (pelicula.genre.includes("Sci-Fi")){
+                const tarjeta = crearObjeto(pelicula)
+                SciFi.appendChild(tarjeta)
+            }
+        })
+}
 function crearObjeto(pelicula) {
     const {title, year, director, duration, genre, rate, poster} = pelicula
     
@@ -85,44 +82,3 @@ function crearObjeto(pelicula) {
     return tarjeta
 }
 
-function renderPeliculas() {
-    const recomendados = document.querySelector("#recomend")
-    const accion = document.querySelector("#accion")
-    const aventura = document.querySelector("#aventura")
-    const comedia = document.querySelector("#comedia")
-
-    movies.forEach(pelicula => {
-        const tarjeta = crearObjeto(pelicula)
-        recomendados.appendChild(tarjeta)})
-
-
-            ////division de genero////
-            //action
-        movies.forEach(pelicula => {
-            if (pelicula.genre.includes("Action")){
-                const tarjeta = crearObjeto(pelicula)
-                accion.appendChild(tarjeta)
-            }
-        }) //adventure
-        movies.forEach(pelicula => {
-            if (pelicula.genre.includes("Adventure")){
-                const tarjeta = crearObjeto(pelicula)
-                aventura.appendChild(tarjeta)
-            }
-
-
-        }) //Comedy
-        movies.forEach(pelicula => {
-            if (pelicula.genre.includes("Comedy")){
-                const tarjeta = crearObjeto(pelicula)
-                comedia.appendChild(tarjeta)
-            }
-        }) //sci-fi
-        movies.forEach(pelicula => {
-            if (pelicula.genre.includes("Sci-Fi")){
-                const tarjeta = crearObjeto(pelicula)
-                SciFi.appendChild(tarjeta)
-            }
-        })
-}
-document.addEventListener('DOMContentLoaded', console.log(movies))
