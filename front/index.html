@@ -43,60 +43,60 @@
                 <div class="conteiner-sm contenedor">
                     <h1>Add Movie</h1>
                     <div class="mb-3">
-                        <label for="inputMovie" class="form-label"><h4>Title</h4></label>
-                        <input type="text" class="form-control cont-btn" id="inputMovie">
+                        <label for="inputTitle" class="form-label"><h4>Title</h4></label>
+                        <input type="text" class="form-control cont-btn" id="inputTitle">
                     </div>
                     <div class="conteiner-sm mb-3">
-                        <label for="inputMovie" class="form-label"><h4>Year</h4></label>
-                        <input type="text" class="form-control cont-btn" id="inputMovie">
+                        <label for="inputYear" class="form-label"><h4>Year</h4></label>
+                        <input type="number" class="form-control cont-btn" id="inputYear">
                     </div>
                     <div class="conteiner-sm mb-3">
-                        <label for="inputMovie" class="form-label"><h4>Director</h4></label>
-                        <input type="text" class="form-control cont-btn" id="inputMovie">
+                        <label for="inputDirector" class="form-label"><h4>Director</h4></label>
+                        <input type="text" class="form-control cont-btn" id="inputDirector">
                     </div>
                     <div class="mb-3">
-                        <label for="inputMovie" class="form-label"><h4>Duration</h4></label>
-                        <input type="text" class="form-control cont-btn" id="inputMovie">
+                        <label for="inputDuration" class="form-label"><h4>Duration</h4></label>
+                        <input type="text" class="form-control cont-btn" id="inputDuration" placeholder="--h --min">
                     </div>
                     <div class="conteiner-sm mb-3">
-                        <label for="inputMovie" class="form-label"><h4>Genres</h4></label>
-                        <input class="form-control cont-btn" id="inputMovie">
+                        <label for="inputGenres" class="form-label"><h4>Genres</h4></label>
+                        <input class="form-control cont-btn" id="inputGenres" placeholder="Action, Adventure, Comedy, Sci-Fi">
                     </div>
                     <div class="conteiner-sm mb-3">
-                        <label for="inputMovie" class="form-label"><h4>Rate</h4></label>
-                        <input type="number" class="form-control " id="inputMovie">
+                        <label for="inputRate" class="form-label"><h4>Rate</h4></label>
+                        <input type="number" class="form-control " id="inputRate" max="10" min="0" step="0.1">
                     </div>
                     <div class="conteiner-sm mb-3">
-                        <label for="inputMovie" class="form-label"><h4>Img URL</h4></label>
-                        <input type="url" class="form-control" id="inputMovie">
+                        <label for="inputImg" class="form-label"><h4>Img URL</h4></label>
+                        <input type="url" class="form-control" id="inputImg">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" id="sendForm">Submit</button>
                     </div>
                     <button class="inicio1">INICIO</button>
                 </div>
             </form>
             
-        <div id="carouselExampleControlsNoTouching" class="carousel slide " data-bs-touch="false">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/vengadores3-3264566.jpg" class="d-block w-100 " alt="...">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./assets/deadpool.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/hp7.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/vengadores3-3264566.jpg" class="d-block w-100" alt="...">
+                  </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="./assets/hp7.jpg" class="d-block w-100 banner" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/deadpool.jpg" class="d-block w-100 banner" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
         <section class="categorias" id="recomendation">
             <h2>Add Movie:</h2>
             <div class="categoria" id="addMovie">
@@ -128,7 +128,7 @@
             <a href="https://www.sensacine.com/peliculas/" class="linkFooter no-line">Sensacine</a>
         </div>
     </footer>
-    <script src="./public/bundle.js"></script>
-    <script src="./scripts/form.js"></script>
+    <script src="./public/index.bundle.js"></script>
+    <script src="./public/form.bundle.js"></script>
 </body>
 </html>

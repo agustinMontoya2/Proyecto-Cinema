@@ -64,9 +64,9 @@ footer {
 
 .carousel {
     position: sticky;
-    top: 0;
+    top: 4em;
     z-index: 0;
-    background-color: #fff;
+    background-color: #000000;
     z-index: 100;
     margin-bottom: 5em;
 }
@@ -163,6 +163,7 @@ footer {
     color: white;
     margin-left: 1em;
     font-family: "Bebas Neue", sans-serif;
+    
 }
 
 .movieCard h4 {
@@ -346,4 +347,9 @@ footer {
     bottom: 40px;
     transition: 0.5s;
     z-index: 0;
+}
+
+.imdb {
+    text-decoration: none;
+    color: inherit;
 }

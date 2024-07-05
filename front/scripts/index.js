@@ -1,5 +1,6 @@
 
 const crearObjeto = require("./crearObjeto")
+const createMovie = require("./createMovie")
 $.get("https://students-api.up.railway.app/movies", (data, state)=>{
     
     data.forEach(pelicula => {

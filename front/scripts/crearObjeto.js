@@ -1,4 +1,4 @@
-function crearObjeto(pelicula) {
+module.exports = function crearObjeto(pelicula) {
     const {title, year, director, duration, genre, rate, poster} = pelicula
     
     const imagen = document.createElement("img")
@@ -17,7 +17,7 @@ function crearObjeto(pelicula) {
 
     const divDescripcion = document.createElement("div")
     const generos = genre
-    const descripcionGeneros = generos.join(', ')
+    const descripcionGeneros = Array.isArray(genre) ? generos.join(', ') : ''
 
     const sinapsis = `${title} is a move created in the year ${year} of the genre ${descripcionGeneros}`
     const descripcion = document.createElement("p")
@@ -26,15 +26,23 @@ function crearObjeto(pelicula) {
     const creador = document.createElement("h4")
     creador.innerHTML = director
 
+    const imdb = document.createElement("a")
+    imdb.href = `https://www.imdb.com/find/?q=${encodeURIComponent(title)}&ref_=nv_sr_sm`;
+    imdb.target = "_blank";
+    imdb.className = "imdb"
+
+    
     const tarjeta = document.createElement("div")
-    tarjeta.appendChild(titulo)
-    tarjeta.appendChild(imagen)
-    tarjeta.appendChild(creador)
+    tarjeta.appendChild(imdb)
+    imdb.appendChild(titulo)
+    imdb.appendChild(imagen)
+    imdb.appendChild(creador)
 
     const puntuacionDuracion = document.createElement("div")
     puntuacionDuracion.appendChild(puntuacion)
     puntuacionDuracion.appendChild(duracion)
     puntuacionDuracion.className = "puntuacionDuracion"
+    
 
     divDescripcion.appendChild(puntuacionDuracion)
 
@@ -43,7 +51,7 @@ function crearObjeto(pelicula) {
     tarjeta.appendChild(divDescripcion)
     tarjeta.className = "movieCard"
 
+
     return tarjeta
 }
 
-module.exports = crearObjeto;
