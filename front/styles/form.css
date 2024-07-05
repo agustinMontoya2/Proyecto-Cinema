@@ -1,0 +1,14 @@
+.contenedor {
+    width: 70%;
+    height: auto;
+    border: 2px solid #000;
+    border-radius: 20px;
+    background-color: rgb(4, 0, 44);
+
+    margin: auto;
+    padding: 6em;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
