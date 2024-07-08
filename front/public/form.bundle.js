@@ -1,1 +1,76 @@
-(()=>{var e={344:e=>{e.exports=function(e){const{title:t,year:n,director:r,duration:c,genre:o,rate:a,poster:d}=e,i=document.createElement("img");i.src=d,i.onerror=()=>{i.src="./assets/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300 (1).jpg"};const u=document.createElement("h4");u.innerHTML=t,u.className="tituloPelicula";const l=document.createElement("p");l.innerHTML=a+"⭐";const m=document.createElement("p");m.innerHTML=c;const s=document.createElement("div"),p=o,v=`${t} is a move created in the year ${n} of the genre ${Array.isArray(o)?p.join(", "):""}`,h=document.createElement("p");h.innerHTML=v;const y=document.createElement("h4");y.innerHTML=r;const C=document.createElement("a");C.href=`https://www.imdb.com/find/?q=${encodeURIComponent(t)}&ref_=nv_sr_sm`,C.target="_blank",C.className="imdb";const E=document.createElement("div");E.appendChild(C),C.appendChild(u),C.appendChild(i),C.appendChild(y);const S=document.createElement("div");return S.appendChild(l),S.appendChild(m),S.className="puntuacionDuracion",s.appendChild(S),s.appendChild(h),s.className="movieDate",E.appendChild(s),E.className="movieCard",E}},958:(e,t,n)=>{const r=n(344);e.exports=function(){const e=document.querySelector("#inputTitle"),t=document.querySelector("#inputYear"),n=document.querySelector("#inputDirector"),c=document.querySelector("#inputDuration"),o=document.querySelector("#inputGenres"),a=document.querySelector("#inputRate"),d=document.querySelector("#inputImg"),i={title:e.value,year:t.value,director:n.value,duration:c.value,genre:o.value.split(", "),rate:a.value,poster:d.value},u=r(i);if(recomend.appendChild(u),e.value="",t.value="",n.value="",c.value="",o.value="",a.value="",d.value="",i.genre.includes("Action")){const e=r(i);accion.appendChild(e)}if(i.genre.includes("Adventure")){const e=r(i);aventura.appendChild(e)}if(i.genre.includes("Comedy")){const e=r(i);comedia.appendChild(e)}if(i.genre.includes("Sci-Fi")){const e=r(i);SciFi.appendChild(e)}}}},t={};const n=function n(r){var c=t[r];if(void 0!==c)return c.exports;var o=t[r]={exports:{}};return e[r](o,o.exports,n),o.exports}(958);document.addEventListener("DOMContentLoaded",(()=>{document.querySelector(".inicio1"),document.querySelector("#divFormCreate"),document.querySelector(".addMovieCard"),document.querySelector("#sendForm").addEventListener("click",(()=>{event.preventDefault(),n(),alert("Enviado")}))}))})();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./scripts/crearObjeto.js":
+/*!********************************!*\
+  !*** ./scripts/crearObjeto.js ***!
+  \********************************/
+/***/ ((module) => {
+
+eval("module.exports = function crearObjeto(pelicula) {\r\n    const {title, year, director, duration, genre, rate, poster} = pelicula\r\n    \r\n    const imagen = document.createElement(\"img\")\r\n    imagen.src = poster\r\n    imagen.onerror = () => {imagen.src = (\"./assets/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300 (1).jpg\")}\r\n\r\n    const titulo = document.createElement(\"h4\")\r\n    titulo.innerHTML = title\r\n    titulo.className= \"tituloPelicula\"\r\n\r\n    const puntuacion = document.createElement(\"p\")\r\n    puntuacion.innerHTML = rate + \"⭐\"\r\n\r\n    const duracion = document.createElement(\"p\")\r\n    duracion.innerHTML = duration\r\n\r\n    const divDescripcion = document.createElement(\"div\")\r\n    const generos = genre\r\n    const descripcionGeneros = Array.isArray(genre) ? generos.join(', ') : ''\r\n\r\n    const sinapsis = `${title} is a move created in the year ${year} of the genre ${descripcionGeneros}`\r\n    const descripcion = document.createElement(\"p\")\r\n    descripcion.innerHTML = sinapsis\r\n\r\n    const creador = document.createElement(\"h4\")\r\n    creador.innerHTML = director\r\n\r\n    const imdb = document.createElement(\"a\")\r\n    imdb.href = `https://www.imdb.com/find/?q=${encodeURIComponent(title)}&ref_=nv_sr_sm`;\r\n    imdb.target = \"_blank\";\r\n    imdb.className = \"imdb\"\r\n\r\n    \r\n    const tarjeta = document.createElement(\"div\")\r\n    tarjeta.appendChild(imdb)\r\n    imdb.appendChild(titulo)\r\n    imdb.appendChild(imagen)\r\n    imdb.appendChild(creador)\r\n\r\n    const puntuacionDuracion = document.createElement(\"div\")\r\n    puntuacionDuracion.appendChild(puntuacion)\r\n    puntuacionDuracion.appendChild(duracion)\r\n    puntuacionDuracion.className = \"puntuacionDuracion\"\r\n    \r\n\r\n    divDescripcion.appendChild(puntuacionDuracion)\r\n\r\n    divDescripcion.appendChild(descripcion)\r\n    divDescripcion.className = \"movieDate\"\r\n    tarjeta.appendChild(divDescripcion)\r\n    tarjeta.className = \"movieCard\"\r\n\r\n\r\n    return tarjeta\r\n}\r\n\r\n\n\n//# sourceURL=webpack://front/./scripts/crearObjeto.js?");
+
+/***/ }),
+
+/***/ "./scripts/createMovie.js":
+/*!********************************!*\
+  !*** ./scripts/createMovie.js ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("const crearObjeto = __webpack_require__(/*! ./crearObjeto */ \"./scripts/crearObjeto.js\")\r\n\r\nmodule.exports = function createMovie(){\r\n    const titulo = document.querySelector(\"#inputTitle\")\r\n    const año = document.querySelector(\"#inputYear\")\r\n    const direct = document.querySelector(\"#inputDirector\")\r\n    const duracion = document.querySelector(\"#inputDuration\")\r\n\r\n    const genero = document.querySelector(\"#inputGenres\")\r\n    \r\n\r\n    const raking = document.querySelector(\"#inputRate\")\r\n    const imagUrl = document.querySelector(\"#inputImg\")\r\n\r\n\r\n    const pelicula = {\r\n        title: titulo.value,\r\n        year: año.value,\r\n        director: direct.value,\r\n        duration: duracion.value,\r\n        genre: genero.value.split(', '),\r\n        rate: raking.value,\r\n        poster: imagUrl.value\r\n    }\r\n\r\n    const tarjeta = crearObjeto(pelicula)\r\n    recomend.appendChild(tarjeta)\r\n\r\n    titulo.value = \"\"\r\n    año.value = \"\"\r\n    direct.value = \"\"\r\n    duracion.value = \"\"\r\n    genero.value = \"\"\r\n    raking.value = \"\"\r\n    imagUrl.value = \"\"\r\n\r\n    if (pelicula.genre.includes(\"Action\")){\r\n        const tarjeta = crearObjeto(pelicula)\r\n        accion.appendChild(tarjeta)\r\n    }\r\n    if (pelicula.genre.includes(\"Adventure\")){\r\n        const tarjeta = crearObjeto(pelicula)\r\n        aventura.appendChild(tarjeta)\r\n    }\r\n    if (pelicula.genre.includes(\"Comedy\")){\r\n        const tarjeta = crearObjeto(pelicula)\r\n        comedia.appendChild(tarjeta)\r\n    }\r\n    if (pelicula.genre.includes(\"Sci-Fi\")){\r\n        const tarjeta = crearObjeto(pelicula)\r\n        SciFi.appendChild(tarjeta)\r\n    }\r\n}\r\n\n\n//# sourceURL=webpack://front/./scripts/createMovie.js?");
+
+/***/ }),
+
+/***/ "./scripts/form.js":
+/*!*************************!*\
+  !*** ./scripts/form.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("const createMovie = __webpack_require__(/*! ./createMovie */ \"./scripts/createMovie.js\")\r\n\r\ndocument.addEventListener(\"DOMContentLoaded\", () => {\r\n    const boton = document.querySelector(\".inicio1\")\r\n    const formulario = document.querySelector(\"#divFormCreate\")\r\n    const agregarPelicula = document.querySelector(\".addMovieCard\")\r\n    const btnForm = document.querySelector(\"#sendForm\") \r\n    // boton.addEventListener(\"click\", ()=> {\r\n    //     event.preventDefault()\r\n    //     formulario.style.display = \"none\"\r\n    // })\r\n    // agregarPelicula.addEventListener(\"click\", ()=> {\r\n    //     formulario.style.display = \"flex\"\r\n    // })\r\n    btnForm.addEventListener(\"click\", () => {\r\n        event.preventDefault()\r\n        createMovie()\r\n        alert(\"Enviado\")\r\n    })\r\n})\r\n\n\n//# sourceURL=webpack://front/./scripts/form.js?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./scripts/form.js");
+/******/ 	
+/******/ })()
+;
