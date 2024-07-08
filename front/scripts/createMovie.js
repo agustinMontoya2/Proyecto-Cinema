@@ -1,30 +1,38 @@
 const crearObjeto = require("./crearObjeto")
 
 module.exports = function createMovie(){
-    const titulo = document.querySelector("#inputTitle").value
-    const año = document.querySelector("#inputYear").value
-    const direct = document.querySelector("#inputDirector").value
-    const duracion = document.querySelector("#inputDuration").value
+    const titulo = document.querySelector("#inputTitle")
+    const año = document.querySelector("#inputYear")
+    const direct = document.querySelector("#inputDirector")
+    const duracion = document.querySelector("#inputDuration")
 
-    const genero = document.querySelector("#inputGenres").value.split(', ')
+    const genero = document.querySelector("#inputGenres")
     
 
-    const raking = document.querySelector("#inputRate").value
-    const imagUrl = document.querySelector("#inputImg").value
+    const raking = document.querySelector("#inputRate")
+    const imagUrl = document.querySelector("#inputImg")
 
 
     const pelicula = {
-        title: titulo,
-        year: año,
-        director: direct,
-        duration: duracion,
-        genre: genero,
-        rate: raking,
-        poster: imagUrl
+        title: titulo.value,
+        year: año.value,
+        director: direct.value,
+        duration: duracion.value,
+        genre: genero.value.split(', '),
+        rate: raking.value,
+        poster: imagUrl.value
     }
 
     const tarjeta = crearObjeto(pelicula)
     recomend.appendChild(tarjeta)
+
+    titulo.value = ""
+    año.value = ""
+    direct.value = ""
+    duracion.value = ""
+    genero.value = ""
+    raking.value = ""
+    imagUrl.value = ""
 
     if (pelicula.genre.includes("Action")){
         const tarjeta = crearObjeto(pelicula)

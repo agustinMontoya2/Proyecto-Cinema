@@ -1,14 +1,65 @@
-.contenedor {
-    width: 70%;
-    height: auto;
-    border: 2px solid #000;
-    border-radius: 20px;
-    background-color: rgb(4, 0, 44);
-
-    margin: auto;
-    padding: 6em;
-
+#divFormCreate {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 200;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(2, 2, 80, 0.990);
+}
+
+.contenedor {
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: rgb(11, 11, 63);
+    backdrop-filter: blur;
+
+    width: 60%;
+    height: 50em;
+    padding: 10%;
+    
+    display: flex;
+    justify-content: center;
     flex-direction: column;
     text-align: center;
+}
+
+#contenedor {
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: rgba(4, 0, 44, 0.774);
+    width: calc(-70px + 50vw);
+    height: 20em;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.contenedor h4 {
+    color: #aeafb6;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.contenedor h1 {
+    color: rgb(0, 0, 0);
+}
+
+.contenedor button {
+    margin-top: 2em;
+}
+
+.inicio1 {
+    background-color: rgb(39, 39, 247);
+    box-shadow: 0px 0px 10px rgb(39, 39, 247);
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 1000;
+    right: 40px;
+    bottom: 40px;
+    transition: 0.5s;
+    z-index: 0;
 }
