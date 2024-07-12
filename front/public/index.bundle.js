@@ -29,13 +29,23 @@ eval("module.exports = function crearObjeto(pelicula) {\r\n    const {title, yea
 
 /***/ }),
 
+/***/ "./scripts/getMovies.js":
+/*!******************************!*\
+  !*** ./scripts/getMovies.js ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("const categories = __webpack_require__(/*! ./categories */ \"./scripts/categories.js\");\r\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n\r\nmodule.exports = async function getMovies() {\r\n  try {\r\n    const movies = await axios(\"http://localhost:3000/movies/\");\r\n    categories(movies.data);\r\n  } catch (error) {\r\n    console.log(error.message + error);\r\n    console.log(\"Hay algun error\");\r\n    alert(\"Salio todo mal. Ingresa a la consola para obtener mas informacion\");\r\n  }\r\n};\r\n\n\n//# sourceURL=webpack://front/./scripts/getMovies.js?");
+
+/***/ }),
+
 /***/ "./scripts/index.js":
 /*!**************************!*\
   !*** ./scripts/index.js ***!
   \**************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const categories = __webpack_require__(/*! ./categories */ \"./scripts/categories.js\")\r\n\r\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\")\r\n\r\nasync function getMovies (){\r\n    try {\r\n        const movies = await axios.get(\"https://students-api.up.railway.app/movies\")\r\n        categories(movies.data)\r\n    } catch (error) {\r\n        console.log(error.message);\r\n    }\r\n}\r\naddEventListener(\"DOMContentLoaded\", () => {\r\n    getMovies()\r\n})\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
+eval("const getMovies = __webpack_require__(/*! ./getMovies */ \"./scripts/getMovies.js\")\r\n\r\naddEventListener(\"DOMContentLoaded\", getMovies())\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
 
 /***/ }),
 
