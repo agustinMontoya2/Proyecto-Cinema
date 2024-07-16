@@ -6,7 +6,7 @@ module.exports = {
       res.status(200).json(movies);
     } catch (error) {
       res.status(error.status).json({
-        error: "no se pudo",
+        error: "Error en el controlador",
       });
     }
   },
