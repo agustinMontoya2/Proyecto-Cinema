@@ -7,3 +7,4 @@ moviesRouter.get("/", moviesControllers.getMovies);
 moviesRouter.post("/", validacionMiddleware, moviesControllers.postMovies);
 
 module.exports = moviesRouter;
+    
