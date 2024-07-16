@@ -7,9 +7,9 @@ module.exports = {
   dbConnect: async () => {
     try {
       await mongoose.connect(URI); // ('DB://IP:PORT/RUTA')
-      console.log("Conectado a mongoose");
+      console.log("Conected to Mongoose");
     } catch (error) {
-      console.log("Error al conectar mongoose");
+      console.log("Error connecting Mongoose");
     }
   },
 };

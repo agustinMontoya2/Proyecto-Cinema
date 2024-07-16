@@ -1,17 +1,20 @@
+require("dotenv").config();
 const app = require("./src/server");
 const dbConnect = require("./src/config/dbConnect");
 
-require("dotenv").config();
 const { PORT, HOST } = process.env;
 
 async function openServer() {
   try {
     await dbConnect.dbConnect();
-    await app.listen(PORT, HOST, () =>
-      console.log("servidor activado en " + PORT)
+    app.listen(PORT, HOST, () =>
+      console.log(`Server activated on ${HOST}:${PORT}`)
     );
   } catch (error) {
-    console.log("algo salio mal al intentar activar el servidor");
+    console.error(
+      "Something went wrong when trying to activate the server",
+      error
+    );
   }
 }
 

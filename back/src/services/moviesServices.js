@@ -4,7 +4,7 @@ module.exports = {
   getMovies: async () => {
     try {
       const arrayMovies = await Movies.find();
-      console.log(arrayMovies);
+      console.log("Movies geted");
       return arrayMovies;
     } catch (error) {
       throw error;
@@ -22,6 +22,7 @@ module.exports = {
         poster,
       });
       await newMovie.save();
+      console.log("Movie posted.");
       return newMovie;
     } catch (error) {
       throw error;

@@ -1,13 +1,14 @@
 const { Router } = require("express");
+const moviesRouter = require("./moviesRouter");
+
 const router = Router();
 
-const moviesRouter = require("./moviesRouter");
-const seriesRouter = require("./seriesRouter");
-
+// Root route
 router.get("/", (req, res) => {
-  res.send("<h1>Inicio</h1>");
+  res.send("<h1>Hello! Use /movies to access movies</h1>");
 });
+
+// Movies routes
 router.use("/movies", moviesRouter);
-router.use("/series", seriesRouter);
 
 module.exports = router;

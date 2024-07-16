@@ -5,11 +5,12 @@ const cors = require("cors");
 
 const app = express();
 
+// Middlewares
 app.use(morgan("dev"));
 app.use(cors());
 app.use(express.json());
-// app.use()
 
+// Routes
 app.use(router);
 
 module.exports = app;
