@@ -12,14 +12,22 @@ module.exports = {
   },
   postMovies: async (req, res) => {
     try {
-      await moviesServices.addMovies(req.body);
-      res.status(200).json({
+      const { title, year, director, duration, genre, rate, poster } = req.body;
+      const newMovie = await moviesServices.addMovies(
+        title,
+        year,
+        director,
+        duration,
+        genre,
+        rate,
+        poster
+      );
+      res.status(201).json({
         message: "Joya",
+        newMovie,
       });
     } catch (error) {
-      res.status(error.status).json({
-        error: "mal ahi",
-      });
+      throw error;
     }
   },
 };

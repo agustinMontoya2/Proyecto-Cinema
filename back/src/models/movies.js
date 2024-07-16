@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const MoviesScheme = new Schema(
   {
-    Title: { type: String, required: true, unique: true },
+    title: { type: String, required: true, unique: true },
     year: { type: Number, min: 0, max: 2030 },
     director: String,
     duration: String,

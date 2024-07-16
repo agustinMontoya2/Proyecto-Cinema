@@ -6,11 +6,25 @@ module.exports = {
       const arrayMovies = await Movies.find();
       console.log(arrayMovies);
       return arrayMovies;
-    } catch (error) {}
+    } catch (error) {
+      throw error;
+    }
   },
-  addMovies: async (movie) => {
+  addMovies: async (title, year, director, duration, genre, rate, poster) => {
     try {
-      tempData.push(movie);
-    } catch (error) {}
+      const newMovie = new Movies({
+        title,
+        year,
+        director,
+        duration,
+        genre,
+        rate,
+        poster,
+      });
+      await newMovie.save();
+      return newMovie;
+    } catch (error) {
+      throw error;
+    }
   },
 };

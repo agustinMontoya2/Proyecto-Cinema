@@ -63,3 +63,7 @@
     transition: 0.5s;
     z-index: 0;
 }
+
+#deleteValue {
+    margin-top: 8px;
+}
