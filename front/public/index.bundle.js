@@ -9,43 +9,43 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./scripts/categories.js":
-/*!*******************************!*\
-  !*** ./scripts/categories.js ***!
-  \*******************************/
+/***/ "./scripts/getMovies/categories.js":
+/*!*****************************************!*\
+  !*** ./scripts/getMovies/categories.js ***!
+  \*****************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const crearObjeto = __webpack_require__(/*! ./crearObjeto */ \"./scripts/crearObjeto.js\")\r\nmodule.exports = function categories(data) {\r\ndata.forEach(pelicula => {\r\n    const tarjeta = crearObjeto(pelicula)\r\n    recomend.appendChild(tarjeta)})\r\n    ////division de genero////\r\n    //action\r\n    data.forEach(pelicula => {\r\n        if (pelicula.genre.includes(\"Action\")){\r\n            const tarjeta = crearObjeto(pelicula)\r\n            accion.appendChild(tarjeta)\r\n        }\r\n    }) //adventure\r\n    data.forEach(pelicula => {\r\n        if (pelicula.genre.includes(\"Adventure\")){\r\n            const tarjeta = crearObjeto(pelicula)\r\n            aventura.appendChild(tarjeta)\r\n        }\r\n    }) //Comedy\r\n    data.forEach(pelicula => {\r\n        if (pelicula.genre.includes(\"Comedy\")){\r\n            const tarjeta = crearObjeto(pelicula)\r\n            comedia.appendChild(tarjeta)\r\n        }\r\n    }) //sci-fi\r\n    data.forEach(pelicula => {\r\n        if (pelicula.genre.includes(\"Sci-Fi\")){\r\n            const tarjeta = crearObjeto(pelicula)\r\n            SciFi.appendChild(tarjeta)\r\n        }\r\n    })\r\n}\n\n//# sourceURL=webpack://front/./scripts/categories.js?");
+eval("const crearObjeto = __webpack_require__(/*! ./crearObjeto */ \"./scripts/getMovies/crearObjeto.js\")\r\nmodule.exports = function categories(data) {\r\ndata.forEach(pelicula => {\r\n    const tarjeta = crearObjeto(pelicula)\r\n    recomend.appendChild(tarjeta)})\r\n    ////division de genero////\r\n    //action\r\n    data.forEach(pelicula => {\r\n        if (pelicula.genre.includes(\"Action\")){\r\n            const tarjeta = crearObjeto(pelicula)\r\n            accion.appendChild(tarjeta)\r\n        }\r\n    }) //adventure\r\n    data.forEach(pelicula => {\r\n        if (pelicula.genre.includes(\"Adventure\")){\r\n            const tarjeta = crearObjeto(pelicula)\r\n            aventura.appendChild(tarjeta)\r\n        }\r\n    }) //Comedy\r\n    data.forEach(pelicula => {\r\n        if (pelicula.genre.includes(\"Comedy\")){\r\n            const tarjeta = crearObjeto(pelicula)\r\n            comedia.appendChild(tarjeta)\r\n        }\r\n    }) //sci-fi\r\n    data.forEach(pelicula => {\r\n        if (pelicula.genre.includes(\"Sci-Fi\")){\r\n            const tarjeta = crearObjeto(pelicula)\r\n            SciFi.appendChild(tarjeta)\r\n        }\r\n    })\r\n}\n\n//# sourceURL=webpack://front/./scripts/getMovies/categories.js?");
 
 /***/ }),
 
-/***/ "./scripts/crearObjeto.js":
-/*!********************************!*\
-  !*** ./scripts/crearObjeto.js ***!
-  \********************************/
+/***/ "./scripts/getMovies/crearObjeto.js":
+/*!******************************************!*\
+  !*** ./scripts/getMovies/crearObjeto.js ***!
+  \******************************************/
 /***/ ((module) => {
 
-eval("module.exports = function crearObjeto(pelicula) {\r\n    const {title, year, director, duration, genre, rate, poster} = pelicula\r\n    \r\n    const imagen = document.createElement(\"img\")\r\n    imagen.src = poster\r\n    imagen.onerror = () => {imagen.src = (\"./assets/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300 (1).jpg\")}\r\n\r\n    const titulo = document.createElement(\"h4\")\r\n    titulo.innerHTML = title\r\n    titulo.className= \"tituloPelicula\"\r\n\r\n    const puntuacion = document.createElement(\"p\")\r\n    puntuacion.innerHTML = rate + \"⭐\"\r\n\r\n    const duracion = document.createElement(\"p\")\r\n    duracion.innerHTML = duration\r\n\r\n    const divDescripcion = document.createElement(\"div\")\r\n    const generos = genre\r\n    const descripcionGeneros = Array.isArray(genre) ? generos.join(', ') : ''\r\n\r\n    const sinapsis = `${title} is a move created in the year ${year} of the genre ${descripcionGeneros}`\r\n    const descripcion = document.createElement(\"p\")\r\n    descripcion.innerHTML = sinapsis\r\n\r\n    const creador = document.createElement(\"h4\")\r\n    creador.innerHTML = director\r\n\r\n    const imdb = document.createElement(\"a\")\r\n    imdb.href = `https://www.imdb.com/find/?q=${encodeURIComponent(title)}&ref_=nv_sr_sm`;\r\n    imdb.target = \"_blank\";\r\n    imdb.className = \"imdb\"\r\n\r\n    \r\n    const tarjeta = document.createElement(\"div\")\r\n    tarjeta.appendChild(imdb)\r\n    imdb.appendChild(titulo)\r\n    imdb.appendChild(imagen)\r\n    imdb.appendChild(creador)\r\n\r\n    const puntuacionDuracion = document.createElement(\"div\")\r\n    puntuacionDuracion.appendChild(puntuacion)\r\n    puntuacionDuracion.appendChild(duracion)\r\n    puntuacionDuracion.className = \"puntuacionDuracion\"\r\n    \r\n\r\n    divDescripcion.appendChild(puntuacionDuracion)\r\n\r\n    divDescripcion.appendChild(descripcion)\r\n    divDescripcion.className = \"movieDate\"\r\n    tarjeta.appendChild(divDescripcion)\r\n    tarjeta.className = \"movieCard\"\r\n\r\n\r\n    return tarjeta\r\n}\r\n\r\n\n\n//# sourceURL=webpack://front/./scripts/crearObjeto.js?");
+eval("module.exports = function crearObjeto(pelicula) {\r\n  const { title, year, director, duration, genre, rate, poster } = pelicula;\r\n\r\n  const imagen = document.createElement(\"img\");\r\n  imagen.src = poster;\r\n  imagen.onerror = () => {\r\n    imagen.src =\r\n      \"./assets/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300 (1).jpg\";\r\n  };\r\n\r\n  const titulo = document.createElement(\"h4\");\r\n  titulo.innerHTML = title;\r\n  titulo.className = \"tituloPelicula\";\r\n\r\n  const puntuacion = document.createElement(\"p\");\r\n  puntuacion.innerHTML = rate + \"⭐\";\r\n\r\n  const duracion = document.createElement(\"p\");\r\n  duracion.innerHTML = duration;\r\n\r\n  const divDescripcion = document.createElement(\"div\");\r\n  const generos = genre;\r\n  const descripcionGeneros = Array.isArray(genre) ? generos.join(\", \") : \"\";\r\n\r\n  const sinapsis = `${title} is a move created in the year ${year} of the genre ${descripcionGeneros}`;\r\n  const descripcion = document.createElement(\"p\");\r\n  descripcion.innerHTML = sinapsis;\r\n\r\n  const creador = document.createElement(\"h4\");\r\n  creador.innerHTML = director;\r\n\r\n  const imdb = document.createElement(\"a\");\r\n  imdb.href = `https://www.imdb.com/find/?q=${encodeURIComponent(\r\n    title\r\n  )}&ref_=nv_sr_sm`;\r\n  imdb.target = \"_blank\";\r\n  imdb.className = \"imdb\";\r\n\r\n  const tarjeta = document.createElement(\"div\");\r\n  tarjeta.appendChild(imdb);\r\n  imdb.appendChild(titulo);\r\n  imdb.appendChild(imagen);\r\n  imdb.appendChild(creador);\r\n\r\n  const puntuacionDuracion = document.createElement(\"div\");\r\n  puntuacionDuracion.appendChild(puntuacion);\r\n  puntuacionDuracion.appendChild(duracion);\r\n  puntuacionDuracion.className = \"puntuacionDuracion\";\r\n\r\n  divDescripcion.appendChild(puntuacionDuracion);\r\n\r\n  divDescripcion.appendChild(descripcion);\r\n  divDescripcion.className = \"movieDate\";\r\n  tarjeta.appendChild(divDescripcion);\r\n  tarjeta.className = \"movieCard\";\r\n\r\n  return tarjeta;\r\n};\r\n\n\n//# sourceURL=webpack://front/./scripts/getMovies/crearObjeto.js?");
 
 /***/ }),
 
-/***/ "./scripts/getMovies.js":
-/*!******************************!*\
-  !*** ./scripts/getMovies.js ***!
-  \******************************/
+/***/ "./scripts/getMovies/getMovies.js":
+/*!****************************************!*\
+  !*** ./scripts/getMovies/getMovies.js ***!
+  \****************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const categories = __webpack_require__(/*! ./categories */ \"./scripts/categories.js\");\r\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n\r\nmodule.exports = async function getMovies() {\r\n  try {\r\n    const movies = await axios(\"http://localhost:3000/movies/\");\r\n    categories(movies.data);\r\n  } catch (error) {\r\n    console.log(error.message + error);\r\n    console.log(\"Hay algun error\");\r\n    alert(\"Salio todo mal. Ingresa a la consola para obtener mas informacion\");\r\n  }\r\n};\r\n\n\n//# sourceURL=webpack://front/./scripts/getMovies.js?");
+eval("const categories = __webpack_require__(/*! ./categories */ \"./scripts/getMovies/categories.js\");\r\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n\r\nmodule.exports = async function getMovies() {\r\n  try {\r\n    const movies = await axios(\"http://localhost:3000/movies/\");\r\n    categories(movies.data);\r\n  } catch (error) {\r\n    console.log(error.message + error);\r\n    console.log(\"Hay algun error\");\r\n    alert(\"Salio todo mal. Ingresa a la consola para obtener mas informacion\");\r\n  }\r\n};\r\n\n\n//# sourceURL=webpack://front/./scripts/getMovies/getMovies.js?");
 
 /***/ }),
 
-/***/ "./scripts/index.js":
-/*!**************************!*\
-  !*** ./scripts/index.js ***!
-  \**************************/
+/***/ "./scripts/getMovies/index.js":
+/*!************************************!*\
+  !*** ./scripts/getMovies/index.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const getMovies = __webpack_require__(/*! ./getMovies */ \"./scripts/getMovies.js\")\r\n\r\naddEventListener(\"DOMContentLoaded\", getMovies())\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
+eval("const getMovies = __webpack_require__(/*! ./getMovies */ \"./scripts/getMovies/getMovies.js\")\r\n\r\naddEventListener(\"DOMContentLoaded\", getMovies())\r\n\n\n//# sourceURL=webpack://front/./scripts/getMovies/index.js?");
 
 /***/ }),
 
@@ -104,7 +104,7 @@ eval("// Axios v1.7.2 Copyright (c) 2024 Matt Zabriskie and contributors\n\n\nfu
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./scripts/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./scripts/getMovies/index.js");
 /******/ 	
 /******/ })()
 ;

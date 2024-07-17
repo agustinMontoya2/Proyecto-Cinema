@@ -1,11 +1,12 @@
 module.exports = {
-    mode: "development",
-    entry: {
-        index: "./scripts/index.js", 
-        form: "./scripts/form.js"},
+  mode: "development",
+  entry: {
+    index: "./scripts/getMovies/index.js",
+    form: "./scripts/postMovies/form.js",
+  },
 
-    output: {
-        path: __dirname + "/public",
-        filename: "[name].bundle.js"
-    }
-}
+  output: {
+    path: __dirname + "/public",
+    filename: "[name].bundle.js",
+  },
+};
