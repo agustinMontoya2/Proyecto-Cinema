@@ -21,17 +21,22 @@ module.exports = {
     };
     if (
       movie.title &&
-      movie.year &&
+      movie.year >= 0 &&
+      movie.year <= 9999 &&
       movie.director &&
       movie.duration &&
       movie.genre &&
-      movie.rate &&
+      movie.rate >= 0 &&
+      movie.rate <= 10 &&
       movie.poster
     ) {
-      console.log("Estan todos los campos");
       postMovie(movie);
+      alert("Added succesfully");
     } else {
-      alert("Todos los campos son requeridos");
+      alert(`
+        All fields are required
+        The year cannot be more than 4 digits.
+        The score must be from 0 to 10`);
     }
   },
   clean: () => {

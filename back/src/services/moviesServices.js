@@ -29,3 +29,13 @@ module.exports = {
     }
   },
 };
+
+//todo Agregar clase movies en services
+/*
+Te sugerimos como extra que, en lugar de responder con objetos literales de películas, 
+en tu módulo de servicio implementes la clase Movie, y respondas con instancias de esta clase. 
+Si logras implementar esto, te asegurarás la integridad de los datos. Además, como un desafío extra,
+te proponemos que, dentro del constructor de la clase, 
+arrojes un error en caso de que esta función no reciba adecuadamente las propiedades 
+“title”, “poster” y “director”.
+*/

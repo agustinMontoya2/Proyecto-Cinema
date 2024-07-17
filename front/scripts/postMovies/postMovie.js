@@ -1,4 +1,5 @@
 const axios = require("axios");
+// requiere("../getMovies")
 
 module.exports = async function postMovie(movie) {
   try {

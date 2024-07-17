@@ -45,7 +45,27 @@ eval("const categories = __webpack_require__(/*! ./categories */ \"./scripts/get
   \************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const getMovies = __webpack_require__(/*! ./getMovies */ \"./scripts/getMovies/getMovies.js\")\r\n\r\naddEventListener(\"DOMContentLoaded\", getMovies())\r\n\n\n//# sourceURL=webpack://front/./scripts/getMovies/index.js?");
+eval("const getMovies = __webpack_require__(/*! ./getMovies */ \"./scripts/getMovies/getMovies.js\");\r\nconst detector = document.getElementById(\"inputTitle\");\r\nconst buttons = __webpack_require__(/*! ../postMovies/buttons */ \"./scripts/postMovies/buttons.js\");\r\n\r\nfunction inicio() {\r\n  if (detector) {\r\n    const btnForm = document.querySelector(\"#sendForm\");\r\n    const btnDelete = document.querySelector(\"#deleteValue\");\r\n\r\n    btnDelete.addEventListener(\"click\", buttons.clean);\r\n    btnForm.addEventListener(\"click\", buttons.post);\r\n  } else {\r\n    getMovies();\r\n  }\r\n}\r\n\r\naddEventListener(\"DOMContentLoaded\", inicio());\r\n\n\n//# sourceURL=webpack://front/./scripts/getMovies/index.js?");
+
+/***/ }),
+
+/***/ "./scripts/postMovies/buttons.js":
+/*!***************************************!*\
+  !*** ./scripts/postMovies/buttons.js ***!
+  \***************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("const postMovie = __webpack_require__(/*! ./postMovie */ \"./scripts/postMovies/postMovie.js\");\r\n\r\nconst title = document.getElementById(\"inputTitle\");\r\nconst year = document.getElementById(\"inputYear\");\r\nconst director = document.getElementById(\"inputDirector\");\r\nconst duration = document.getElementById(\"inputDuration\");\r\nconst genres = document.getElementById(\"inputGenres\");\r\nconst rate = document.getElementById(\"inputRate\");\r\nconst poster = document.getElementById(\"inputImg\");\r\n\r\nmodule.exports = {\r\n  post: () => {\r\n    const movie = {\r\n      title: title.value,\r\n      year: Number(year.value),\r\n      director: director.value,\r\n      duration: duration.value,\r\n      genre: [genres.value],\r\n      rate: Number(rate.value),\r\n      poster: poster.value,\r\n    };\r\n    if (\r\n      movie.title &&\r\n      movie.year >= 0 &&\r\n      movie.year <= 9999 &&\r\n      movie.director &&\r\n      movie.duration &&\r\n      movie.genre &&\r\n      movie.rate >= 0 &&\r\n      movie.rate <= 10 &&\r\n      movie.poster\r\n    ) {\r\n      postMovie(movie);\r\n      alert(\"Added succesfully\");\r\n    } else {\r\n      alert(`\r\n        All fields are required\r\n        The year cannot be more than 4 digits.\r\n        The score must be from 0 to 10`);\r\n    }\r\n  },\r\n  clean: () => {\r\n    title.value = \"\";\r\n    year.value = \"\";\r\n    director.value = \"\";\r\n    duration.value = \"\";\r\n    genres.value = \"\";\r\n    rate.value = \"\";\r\n    poster.value = \"\";\r\n    console.log(\"limpiado\");\r\n  },\r\n};\r\n\n\n//# sourceURL=webpack://front/./scripts/postMovies/buttons.js?");
+
+/***/ }),
+
+/***/ "./scripts/postMovies/postMovie.js":
+/*!*****************************************!*\
+  !*** ./scripts/postMovies/postMovie.js ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n// requiere(\"../getMovies\")\r\n\r\nmodule.exports = async function postMovie(movie) {\r\n  try {\r\n    const response = await axios.post(\"http://localhost:3000/movies\", movie);\r\n    console.log(\"Posted succesfully\");\r\n  } catch (error) {\r\n    console.error(\"Error setting up request:\", error);\r\n  }\r\n};\r\n\n\n//# sourceURL=webpack://front/./scripts/postMovies/postMovie.js?");
 
 /***/ }),
 

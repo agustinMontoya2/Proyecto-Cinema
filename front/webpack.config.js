@@ -2,7 +2,6 @@ module.exports = {
   mode: "development",
   entry: {
     index: "./scripts/getMovies/index.js",
-    form: "./scripts/postMovies/form.js",
   },
 
   output: {

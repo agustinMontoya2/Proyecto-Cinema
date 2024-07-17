@@ -3,8 +3,8 @@
 
 header {
     width: 100%;
-    background-color: #0f0f47f5;
-    box-shadow: 0px 0px 5cap #0211e0b7;
+    background-color: #202020f5;
+    box-shadow: 0px 0px 10cap #141414f5;
     display: flex;
     position: fixed;
     z-index: 100000;
@@ -41,6 +41,7 @@ footer {
 #barNav {
     display: flex;
     align-items: center;
+    justify-content: center;
     border-radius: 20px;
     gap: .2em;
 }
@@ -65,6 +66,8 @@ footer {
     color: #000000;
     font-weight: bolder;
     font-size: large;
+    
+    filter: drop-shadow(0px 0px 15px #636363);
 }
 
 .boton {
@@ -89,7 +92,7 @@ footer {
 }
 
 #myaccount:hover {
-    filter: drop-shadow(0px 0px 15px #474747);
+    filter: drop-shadow(0px 0px 15px #636363);
 }
 
 .icon {
@@ -152,7 +155,7 @@ footer {
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    padding: 1em;
+    padding: 1em 11em 1em 0em;
     position: relative;
 }
 
