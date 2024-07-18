@@ -6,7 +6,6 @@ const MoviesScheme = new Schema(
     title: {
       type: String,
       required: [true, "The title is required."],
-      unique: [true, "The title must be unique."],
     },
     year: {
       type: Number,
